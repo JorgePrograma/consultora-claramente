@@ -22,20 +22,56 @@ configurations {
 repositories {
 	mavenCentral()
 }
-
 dependencies {
+	// MapStruct: Librería para la generación de código para mapeo de objetos
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	// Procesador de anotaciones de MapStruct
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+	// Redis (Comentadas porque decidiste no usar Redis por ahora)
+	// implementation 'org.springframework.boot:spring-boot-starter-data-redis' // Spring Data Redis: Starter para la integración con Redis
+	// implementation 'io.lettuce:lettuce-core' // Lettuce: Cliente Redis no bloqueante
+
+	// Spring Boot Actuator: Proporciona endpoints para monitorizar y gestionar la aplicación
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// Driver JDBC de PostgreSQL: Permite la conexión a la base de datos PostgreSQL.  (Se especifica la versión explicitamente)
+	implementation 'org.postgresql:postgresql:42.7.1'
+
+	// Spring Data JPA: Simplifica el acceso a la base de datos utilizando JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-authorization-server'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Spring Security: Proporciona seguridad y control de acceso
+	//implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Spring Validation: Para la validación de beans
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Spring Web: Para construir aplicaciones web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Lombok: Librería para reducir el código boilerplate (getters, setters, etc.)
 	compileOnly 'org.projectlombok:lombok'
+
+	// Spring Boot Devtools: Proporciona funcionalidades para el desarrollo, como el reinicio automático
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Spring Boot Docker Compose: Soporte para la integración con Docker Compose
 	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
-	runtimeOnly 'org.postgresql:postgresql'
+
+	// Driver JDBC de PostgreSQL: Permite la conexión a la base de datos PostgreSQL. Usado en tiempo de ejecución.  (Se especifica la versión explicitamente)
+	runtimeOnly 'org.postgresql:postgresql:42.7.1'
+
+	// Procesador de anotaciones de Lombok
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot Test: Starter para las pruebas
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
+
+	// Spring Security Test: Utilidades para probar Spring Security
+	//testImplementation 'org.springframework.security:spring-security-test'
+
+	// JUnit Platform Launcher: Para ejecutar pruebas JUnit en la plataforma JUnit
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

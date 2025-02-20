@@ -11,3 +11,15 @@ public class EcommerceApiApplication {
 	}
 
 }
+
+/*
+	comandos para correr spring boot
+
+	./gradlew bootRun
+
+	generar el docker
+	docker-compose up -d
+
+
+
+*/
